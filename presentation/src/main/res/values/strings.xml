@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Github-Search</string>
+    <string name="empty_keyword">저장된 검색어가 없습니다.</string>
+    <string name="input_text">검색어를 입력하세요.</string>
+</resources>

@@ -1,0 +1,94 @@
+ext {
+
+    compiler = [
+            java  : JavaVersion.VERSION_1_8,
+            kotlin: '1.3.71'
+    ]
+
+    android = [
+            buildTools: '29.0.2',
+            minSdk    : 19,
+            targetSdk : 29,
+            compileSdk: 29
+    ]
+
+    application = [
+            id                       : 'com.search.github',
+            versionCode              : 1,
+            versionName              : "1.0.0",
+            testInstrumentationRunner: "android.support.test.runner.AndroidJUnitRunner"
+    ]
+
+    // App Libraries
+    appCompatVersion = '1.1.0'
+    constraintLayoutVersion = '1.1.3'
+    swipeLayoutVersion = '1.0.0'
+    lifecycleVersion = '2.2.0'
+    viewPager2Version = '1.0.0'
+    materialVersion = '1.1.0'
+    ktxVersion = '1.3.0'
+    retrofit2Version = '2.9.0'
+    okHttpVersion = '4.7.2'
+    rxJavaVersion = '2.2.14'
+    rxAndroidVersion = '2.1.1'
+    daggerVersion = '2.28'
+    glideVersion = '4.11.0'
+
+    // Test Libraries
+    jUnitVersion = '4.12'
+    testVersion = '1.2.0'
+    espressoVersion = '3.2.0'
+    mockitoVersion = '2.13.+'
+
+    presentationKapt = [
+            "com.google.dagger:dagger-compiler:$daggerVersion",
+            "com.google.dagger:dagger-android-processor:$daggerVersion"
+    ]
+
+    presentationAnnotationProcessorDependencies = [
+            "com.github.bumptech.glide:compiler:$glideVersion",
+    ]
+
+    presentationDependencies = [
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$compiler.kotlin",
+            "androidx.core:core-ktx:$ktxVersion",
+            "androidx.appcompat:appcompat:$appCompatVersion",
+            "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            "androidx.swiperefreshlayout:swiperefreshlayout:$swipeLayoutVersion",
+            "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
+            "androidx.viewpager2:viewpager2:$viewPager2Version",
+            "com.google.android.material:material:$materialVersion",
+            "com.google.dagger:dagger-android:$daggerVersion",
+            "com.google.dagger:dagger-android-support:$daggerVersion",
+            "com.github.bumptech.glide:glide:$glideVersion",
+            "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    ]
+
+    dataDependencies = [
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$compiler.kotlin",
+            "com.squareup.retrofit2:retrofit:$retrofit2Version",
+            "com.squareup.retrofit2:adapter-rxjava2:$retrofit2Version",
+            "com.squareup.retrofit2:converter-moshi:$retrofit2Version",
+            "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    ]
+
+    domainDependencies = [
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$compiler.kotlin",
+            "com.squareup.retrofit2:retrofit:$retrofit2Version",
+            "com.squareup.retrofit2:adapter-rxjava2:$retrofit2Version",
+            "com.squareup.retrofit2:converter-moshi:$retrofit2Version"
+    ]
+
+    testDependencies = [
+            "junit:junit:$jUnitVersion",
+            "org.mockito:mockito-core:${mockitoVersion}"
+    ]
+
+    androidTestDependencies = [
+            "androidx.test.espresso:espresso-core:$espressoVersion"
+    ]
+
+}

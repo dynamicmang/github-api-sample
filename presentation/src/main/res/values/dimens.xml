@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="text_size">17sp</dimen>
+    <dimen name="single_line">1dp</dimen>
+    <dimen name="five_dp">5dp</dimen>
+    <dimen name="ten_dp">10dp</dimen>
+    <dimen name="image_size">40dp</dimen>
+    <dimen name="user_thumbnail_size">50dp</dimen>
+    <dimen name="search_edit_box">56dp</dimen>
+</resources>

@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+
+    def ext = rootProject.extensions.ext
+    compileSdkVersion ext.android.compileSdk
+    buildToolsVersion ext.android.buildTools
+
+    defaultConfig {
+        minSdkVersion ext.android.minSdk
+        targetSdkVersion ext.android.targetSdk
+        versionCode ext.application.versionCode
+        versionName ext.application.versionName
+        testInstrumentationRunner ext.application.testInstrumentationRunner
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        debug {
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility ext.compiler.java
+        targetCompatibility ext.compiler.java
+    }
+
+}
+
+def API_URL = System.getenv("API_URL") ?: apiUrl
+def API_KEY = System.getenv("API_KEY") ?: apiKey
+
+android.buildTypes.each { type ->
+    type.buildConfigField "String", "API_URL", "\"$API_URL\""
+    type.buildConfigField "String", "API_KEY", "\"$API_KEY\""
+}
+
+dependencies {
+    implementation dataDependencies
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':domain')
+}

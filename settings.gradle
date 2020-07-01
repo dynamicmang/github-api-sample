@@ -1,0 +1,4 @@
+rootProject.name='Github-Search'
+include ':presentation'
+include ':data'
+include ':domain'
